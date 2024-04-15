@@ -8,4 +8,8 @@ RUN apt-get install -y nodejs
 
 RUN npm install -g sails
 
-CMD ["tail","-f","/dev/null"]
+WORKDIR /app
+
+COPY . .
+
+CMD ["sails", "lift", "--verbose"]

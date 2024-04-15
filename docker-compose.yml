@@ -8,8 +8,7 @@ services:
     ports:
       - 1337:1337
     volumes:
-      - "./frontend/code:/app"
-      - /app/node_modules
+      - "./frontend:/app"
     networks:
       - private
   mongo:
