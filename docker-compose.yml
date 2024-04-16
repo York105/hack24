@@ -21,5 +21,21 @@ services:
     networks:
       - private
 
+  api:
+    restart: always
+    build:
+        context: ./api
+        dockerfile: Dockerfile
+    ports:
+        - 8441:8441
+
+  embeddings:
+    restart: always
+    build:
+      context: ./hf-text-embeddings-inference
+      dockerfile: Dockerfile
+    ports:
+      - 8442:80
+
 networks:
   private:
